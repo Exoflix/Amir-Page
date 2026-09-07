@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Le nouveau site Amir Market arrive bientôt. Un commerce toujours plus proche de son quartier." />
+    <title>Amir Market | Votre nouveau site arrive bientôt</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Dynamic Background -->
+    <div class="bg-container" id="bg-container">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <!-- Particles added via script -->
+    </div>
+    
+
+
+    <main class="page-wrapper">
+      <section class="coming-card" aria-labelledby="page-title">
+        <div class="main-hero">
+          <a class="brand" href="#page-title" aria-label="Amir Market, accueil"><img src="amir_market_logo_transparent.png" alt="Amir Market"></a>
+          <p class="eyebrow">Amir Market · Nîmes</p>
+          <h1 id="page-title">Votre nouveau site<br><em>arrive bientôt.</em></h1>
+          <p class="hero-copy">Pour être toujours plus proche de son quartier, Amir Market prépare un nouvel espace en ligne.</p>
+          <p class="hero-note">De belles nouveautés arrivent très bientôt.</p>
+        </div>
+        <section class="location-panel" aria-labelledby="location-title">
+          <div class="location-heading">
+            <h2 id="location-title">En attendant, venez nous <em>retrouver en magasin.</em></h2>
+          </div>
+          <div class="location-layout">
+            <section class="address-card">
+              <p class="eyebrow">Notre adresse</p>
+              <h3>181 route d'Avignon</h3>
+              <p class="city">Nîmes 30000</p>
+              <a class="location-button" href="https://www.google.com/maps/search/?api=1&query=181+Route+d%27Avignon+30000+N%C3%AEmes" target="_blank" rel="noopener">Itinéraire <span>↗</span></a>
+            </section>
+            <section class="map-card" aria-label="Carte de localisation Amir Market">
+              <iframe title="Carte Amir Market, 181 route d'Avignon à Nîmes" src="https://www.openstreetmap.org/export/embed.html?bbox=4.386%2C43.838%2C4.414%2C43.862&layer=mapnik&marker=43.8498247%2C4.3998989" loading="lazy"></iframe>
+              <a class="map-link" href="https://www.openstreetmap.org/?mlat=43.8498247&mlon=4.3998989#map=16/43.8498247/4.3998989" target="_blank" rel="noopener">Ouvrir la carte ↗</a>
+            </section>
+          </div>
+          <section class="hours-card">
+            <div class="hours-title"><p class="eyebrow">Horaires d'ouverture</p><h3>On vous accueille<br><em>tous les jours.</em></h3></div>
+            <div class="hours-list"><div><span>Lundi — Jeudi</span><strong>9h00 — 19h30</strong></div><div><span>Vendredi</span><strong>9h00 — 12h30 <small>· fermé ·</small> 14h30 — 19h30</strong></div><div><span>Samedi — Dimanche</span><strong>9h00 — 19h30</strong></div></div>
+            <aside class="accessibility-info">
+              <h3>Accès pratique</h3>
+              <p class="access-item"><img class="access-icon car-icon" src="voiture.png" alt="" aria-hidden="true"><strong>Parking disponible</strong></p>
+              <p class="access-item"><img class="access-icon pmr-icon" src="PMR.png" alt="" aria-hidden="true"><strong>Accessible aux PMR</strong></p>
+              <p class="stop-name">Arrêt <strong>Jacques Baby</strong></p>
+              <p class="transit-label">via Trambus</p>
+              <div class="transit-lines" aria-label="Lignes TramBus desservant l'arrêt Jacques Baby">
+                <span class="transit-line transit-t2"><img class="bus-icon" src="bus.png" alt="" aria-hidden="true"> T2</span>
+                <span class="transit-line transit-t4"><img class="bus-icon" src="bus.png" alt="" aria-hidden="true"> T4</span>
+              </div>
+            </aside>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-bottom">&copy; <span id="year"></span> Amir Market · Nîmes</p>
+    </footer>
+
+    <script>
+      // Update year automatically
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+
+
+      // Create particles
+      const container = document.getElementById('bg-container');
+      const particleCount = 42;
+
+      for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        
+        // Random size
+        const size = Math.random() * 52 + 8 + 'px';
+        p.style.width = size;
+        p.style.height = size;
+        
+        // Random position
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.top = Math.random() * 100 + 'vh';
+        
+        // Random animation delay and duration
+        p.style.opacity = Math.random() * .18 + .08;
+        p.style.animationDelay = Math.random() * 16 + 's';
+        p.style.animationDuration = Math.random() * 18 + 16 + 's';
+        p.style.setProperty('--drift-x', Math.random() * 180 - 90 + 'px');
+        
+        container.appendChild(p);
+      }
+    </script>
+</body>
+</html>
