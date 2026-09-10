@@ -46,9 +46,10 @@ body::before { background-image: radial-gradient(rgba(244, 240, 235, .13) 1px, t
 .location-heading h2 em { color: var(--coral); font-style: normal; }
 .location-layout { display: grid; gap: 1rem; grid-template-columns: .72fr 1.28fr; }
 .address-card, .map-card, .hours-card { background: rgba(233, 227, 220, .08); border: 1px solid var(--line); border-radius: 18px; }
-.address-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 270px; padding: 1.75rem; }
+.address-card { container-type: inline-size; display: flex; flex-direction: column; justify-content: space-between; min-height: 270px; padding: 1.75rem; }
 .address-card .eyebrow { font-size: .75rem; margin-bottom: 1.2rem; }
-.address-card h3 { color: var(--ink); font-size: clamp(1.25rem, 2.7vw, 2.35rem); letter-spacing: -.08em; line-height: 1; margin: 0 0 1rem; max-width: none; white-space: nowrap; }
+/* Font-size tied to the card's own width (cqw), not the viewport, so it never overflows regardless of layout width. */
+.address-card h3 { color: var(--ink); font-size: clamp(1.1rem, 9.5cqw, 2.35rem); letter-spacing: -.08em; line-height: 1; margin: 0 0 1rem; max-width: 100%; white-space: nowrap; }
 .address-card > .city { color: #e06a72; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.2; margin: 0; }
 .location-button { align-items: center; background: var(--ink); border: 1px solid rgba(244, 240, 235, .18); border-radius: 10px; color: var(--paper); display: inline-flex; font-size: .72rem; font-weight: 800; gap: 1.2rem; padding: .75rem .95rem; transition: var(--transition); }
 .address-card .location-button { align-self: flex-start; margin-top: auto; }
